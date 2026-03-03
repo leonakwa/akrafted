@@ -195,7 +195,6 @@ export default function Home() {
             className="bg-gradient-to-r from-orange-600 to-yellow-400 text-black px-8 py-3 rounded-x1 font-semibold hover:scale-105 transiion"
           >
             {loading ? "Sending..." : "Send Message"}
-            Send Message
           </button>
         </form>
       </section>
