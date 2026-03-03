@@ -7,9 +7,14 @@ export default function Home() {
   const [name, setName] = useState("");
   const [email, setEmail] = useState("");
   const [message, setMessage] = useState("");
+  const [success, setSuccess] = useState(false);
+  const [loading, setLoading] = useState(false);
 
   const handleSubmit = async (e) => {
     e.preventDefault();
+    setLoading(true);
+    setSuccess(false);
+    
 
     const res = await fetch("api/contact", {
       method: "POST",
@@ -18,7 +23,15 @@ export default function Home() {
       },
       body: JSON.stringify({ name, email, message}),
     });
-  }
+
+    if (res.ok) {
+      setSuccess(true);
+      setName("");
+      setEmail("");
+      setMessage("");
+    } 
+    setLoading(false);
+  };
   return (
     <main className="min-h-screen bg-black text-white px-6">
 
@@ -145,6 +158,7 @@ export default function Home() {
           <input
             type="text"
             placeholder="Your Name"
+            value={name}
             className="w-full p-4 rounded-lg bg-gray-800 text-white"
             onChange={(e) => setName(e.target.value)}
             required
@@ -153,6 +167,7 @@ export default function Home() {
           <input
             type="text"
             placeholder="Your Email"
+            value={email}
             className="w-full p-4 rounded-lg bg-gray-800 text-white"
             onChange={(e) => setEmail(e.target.value)}
             required
@@ -160,6 +175,7 @@ export default function Home() {
 
           <textarea
             placeholder="Your Message"
+            value={message}
             rows="5"
             className="w-full p-4 rounded-lg bg-gray-800 text-white"
             onChange={(e) => setMessage(e.target.value)}
