@@ -151,6 +151,13 @@ export default function Home() {
           Contact Us
         </h2>
 
+
+        {success && (
+         <div className="successMessage">
+          Message sent successfully!
+          </div>
+        )}  
+
         <form
           onSubmit={handleSubmit}
           className="max-w-x1 mx-auto space-y-6"
@@ -183,9 +190,11 @@ export default function Home() {
           />
 
           <button
-            type="submit"
+            type="submit" disabled={loading}
+            
             className="bg-gradient-to-r from-orange-600 to-yellow-400 text-black px-8 py-3 rounded-x1 font-semibold hover:scale-105 transiion"
           >
+            {loading ? "Sending..." : "Send Message"}
             Send Message
           </button>
         </form>
