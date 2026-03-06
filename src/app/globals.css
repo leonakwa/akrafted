@@ -33,6 +33,8 @@ main {
   padding-left: 24px;
   padding-right: 24px;
   width: 100%;
+  margin-left: auto;
+  margin-right: auto;
 }
 
 .hero {
@@ -247,7 +249,7 @@ main {
 }
 
 .nav-container {
-  max-width: 1200px;
+  width: 1200px;
   margin: auto;
   display: flex;
   align-items: center;
@@ -324,11 +326,4 @@ html {
     opacity: 1;
     transform: scale(1.05);
   }
-}
-
-html, body {
-  margin: 0;
-  padding: 0;
-  width: 100%;
-  background: #000;
 }
