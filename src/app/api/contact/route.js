@@ -11,7 +11,7 @@ export async function POST(request) {
             to: "akrafted04@gmail.com",
             subject: "New Contact Submission - Akrafted",
             html:`
-              <h2>New Message fromAkrafted Website</h2 
+              <h2>New Message from Akrafted Website</h2 
               <p><strong>Name:</strong> ${name}</p> 
               <p><strong>Email:</strong> ${email}</p>
               <p><strong>Message:</strong> ${message}</p>

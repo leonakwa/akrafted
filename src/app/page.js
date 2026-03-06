@@ -1,6 +1,5 @@
 "use client";
-import {useState} from "react";
-import Image from "next/image";
+import {useEffect, useState} from "react";
 
 export default function Home() {
 
@@ -31,27 +30,61 @@ export default function Home() {
       setMessage("");
     } 
     setLoading(false);
+
+    useEffect(() => {
+      setTimeout(() => {
+        setLoading(false);
+      }, 2000);
+    }, [])
+
+    if (loading) {
+      return (
+        <div className="loader-wrapper">
+          <img src="/akraftedlogo.png" className="loader-logo" alt="Akrafted logo"/>
+        </div>
+      );
+    }
   };
   return (
-    <main className="min-h-screen bg-black text-white px-6">
+  
+     
+    <main>
+
+      <header className="header">
+        <div className="nav-container">
+
+          <div className="brand">
+             <img src="/akraftedlogo.png" alt="Akrafted Logo" className="logo" />
+
+             
+             <p className="motto">
+               Crafted for Creativity. Built for Impact.
+             </p>
+
+          </div>
+
+          <nav className="nav">
+            <a href="#services">Services</a>
+            <a href="#about">About</a>
+            <a href="#contact">Contact</a>
+          </nav>
+        </div>
+       
+      </header>
 
       {/* HERO SECTION */}
-      <section className="flex flex-col items-center justify-center text-center py-24">
+      <section className="hero">
 
-        <Image
-          src="/akraftedlogo.png"
-          alt="Akrafted Logo"
-          width={400}
-          height={400}
-          className="mb-8"
-        />
-
-        <p className="text-gray-400 max-w-2xl text-lg">
+        <p className="hero-content">
           A clarity-first content agency helping brands and digital projects
           communicate with structure, authority, and strategic precision.
         </p>
 
-        <button className="mt-10 bg-gradient-to-r from-orange-600 to-yellow-400 text-black px-8 py-3 rounded-xl font-semibold hover:scale-105 transition">
+        <button className="hero-button"
+          onClick={() =>
+            document.getElementById("contact-form").scrollIntoView([
+            ])
+          }>
           Work With Us
         </button>
 
@@ -59,13 +92,13 @@ export default function Home() {
 
 
       {/* WHAT WE DO */}
-      <section className="py-20 text-center border-t border-gray-800">
+      <section className="wwd">
 
-        <h2 className="text-3xl font-bold mb-6">
+        <h2 className="wwd-head">
           What We Do
         </h2>
 
-        <p className="text-gray-400 max-w-3xl mx-auto">
+        <p className="wwd-content">
           We transform unclear ideas into structured communication systems.
           From brand storytelling to technical documentation, we craft content
           that strengthens positioning and builds trust.
@@ -75,37 +108,37 @@ export default function Home() {
 
 
       {/* SERVICES */}
-      <section className="py-20 border-t border-gray-800">
+      <section className="services">
 
-        <h2 className="text-3xl font-bold text-center mb-12">
+        <h2 className="services-head">
           Our Services
         </h2>
 
-        <div className="grid md:grid-cols-3 gap-10 max-w-6xl mx-auto text-center">
+        <div className="services-content">
 
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-yellow-400">
+            <h3 className="bm">
               Brand Messaging
             </h3>
-            <p className="text-gray-400">
+            <p className="bm-content">
               Clear positioning, refined tone, and strategic messaging that defines your brand identity.
             </p>
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-yellow-400">
+            <h3 className="wtw">
               Web3 & Technical Writing
             </h3>
-            <p className="text-gray-400">
+            <p className="wtw-content">
               Whitepapers, documentation, and product breakdowns written with clarity and precision.
             </p>
           </div>
 
           <div>
-            <h3 className="text-xl font-semibold mb-4 text-yellow-400">
+            <h3 className="gc">
               Growth Content
             </h3>
-            <p className="text-gray-400">
+            <p className="gc-content">
               High-impact threads, articles, and campaign content designed to drive engagement and growth.
             </p>
           </div>
@@ -116,13 +149,13 @@ export default function Home() {
 
 
       {/* WHY AKRAFTED */}
-      <section className="py-20 border-t border-gray-800 text-center">
+      <section className="whyak">
 
-        <h2 className="text-3xl font-bold mb-6">
-          Why Akrafted
+        <h2 className="whyak-head">
+          Why Akrafted?
         </h2>
 
-        <p className="text-gray-400 max-w-3xl mx-auto">
+        <p className="whyak-content">
           We don’t just write content. We build structured communication systems.
           Our approach combines strategic thinking, deep research, and clarity-driven storytelling
           to help brands stand out in competitive digital markets.
@@ -132,22 +165,25 @@ export default function Home() {
 
 
       {/* CTA SECTION */}
-      <section className="py-24 border-t border-gray-800 text-center">
+      <section className="cta">
 
-        <h2 className="text-3xl font-bold mb-6">
+        <h2 className="cta-head">
           Ready To Bring Clarity To Your Brand?
         </h2>
 
-        <button className="bg-gradient-to-r from-orange-600 to-yellow-400 text-black px-10 py-4 rounded-xl font-semibold hover:scale-105 transition">
+        <button className="cta-button"
+          onClick={() =>
+            document.getElementById("contact-form").scrollIntoView()
+          }>
           Let’s Build Together
         </button>
 
       </section>
 
       {/*CONTACT SECTON*/}
-      <section className="py-20 border-t border-gray-800 text-center">
+      <section className="contact">
 
-        <h2 className="text-3x1 font-bold mb-8">
+        <h2 className="contact-head">
           Contact Us
         </h2>
 
@@ -160,13 +196,14 @@ export default function Home() {
 
         <form
           onSubmit={handleSubmit}
-          className="max-w-x1 mx-auto space-y-6"
+          className="form1"
+          id="contact-form"
         >
           <input
             type="text"
             placeholder="Your Name"
             value={name}
-            className="w-full p-4 rounded-lg bg-gray-800 text-white"
+            className="name"
             onChange={(e) => setName(e.target.value)}
             required
           />
@@ -175,7 +212,7 @@ export default function Home() {
             type="text"
             placeholder="Your Email"
             value={email}
-            className="w-full p-4 rounded-lg bg-gray-800 text-white"
+            className="name"
             onChange={(e) => setEmail(e.target.value)}
             required
           />
@@ -184,7 +221,7 @@ export default function Home() {
             placeholder="Your Message"
             value={message}
             rows="5"
-            className="w-full p-4 rounded-lg bg-gray-800 text-white"
+            className="name"
             onChange={(e) => setMessage(e.target.value)}
             required
           />
@@ -192,13 +229,15 @@ export default function Home() {
           <button
             type="submit" disabled={loading}
             
-            className="bg-gradient-to-r from-orange-600 to-yellow-400 text-black px-8 py-3 rounded-x1 font-semibold hover:scale-105 transiion"
+            className="form-button"
           >
             {loading ? "Sending..." : "Send Message"}
+
           </button>
         </form>
       </section>
 
     </main>
+    
   );
 }
