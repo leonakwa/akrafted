@@ -26,9 +26,6 @@ body {
   }
 }
 
-body {
-  margin: 0;
-}
 
 main {
   min-height: 100vh;
@@ -244,7 +241,7 @@ main {
 }
 
 .header {
-  width: 100%;
+  min-width: 100%;
   background: #0b0b0b;
   border-bottom: 1px solid #222;
   padding: 20px 40px;
@@ -252,7 +249,7 @@ main {
 }
 
 .nav-container {
-  width: 100%;
+  width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -329,12 +326,4 @@ html {
     opacity: 1;
     transform: scale(1.05);
   }
-}
-
-html, body{
-  margin: 0;
-  padding: 0;
-  overflow-x: hidden;
-  width: 100%;
-  background-color: black;
 }
