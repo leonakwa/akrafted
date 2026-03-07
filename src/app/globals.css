@@ -5,6 +5,10 @@ body {
   margin: 0;
 }
 
+:root {
+  background: #000;
+}
+
 .successMessage{
   background-color: #1a1a1a;
   color: orange;
@@ -32,9 +36,9 @@ main {
   background: #000;
   color: white;
   padding: 20px;
-  width: 100%;
-  margin: 0 auto;
-  max-width: 900px;
+  margin-left: auto;
+  margin-right: auto;
+  min-width: 80%;
 }
 
 .hero {
@@ -249,7 +253,6 @@ main {
 }
 
 .nav-container {
-  min-width: 1200px;
   margin: 0 auto;
   display: flex;
   align-items: center;
@@ -327,3 +330,4 @@ html {
     transform: scale(1.05);
   }
 }
+
