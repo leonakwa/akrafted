@@ -54,10 +54,8 @@ export default function Home() {
         <div className="nav-container">
 
           <div className="brand">
-             <img src="/akraftedlogo.png" alt="Akrafted Logo" className="logo" />
-
-             
-             <p className="motto">
+             <img src="/akraftedlogo.png" alt="Akrafted Logo"/> 
+             <p>
                Crafted for Creativity. Built for Impact.
              </p>
 
