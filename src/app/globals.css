@@ -344,3 +344,41 @@ html {
     margin-right: 15px;
   }
 }
+
+footer {
+  background-color: #0a0a0a;
+  color: #ccc;
+  text-align: center;
+  padding: 40px 20px;
+  border-top: 1px solid #1f2937;
+}
+
+footer p {
+  margin-bottom: 10px;
+  font-size: 10px;
+}
+
+.footer-link {
+  display: flex;
+  justify-content: center;
+  gap: 10px;
+}
+
+.footer-link a {
+  color: #ccc;
+  text-decoration: none;
+  font-size: 12px;
+  transition: color 0.3s;
+}
+
+.footer-link a:hover {
+  color: orange;
+}
+
+@media (max-width: 600px) {
+
+  .footer-link {
+    flex-direction: row;
+    gap: 10px;
+  }
+}

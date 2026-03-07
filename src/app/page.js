@@ -63,8 +63,8 @@ export default function Home() {
 
           <nav className="nav">
             <a href="#services">Services</a>
-            <a href="#about">About</a>
-            <a href="#contact">Contact</a>
+            <a href="/about">About</a>
+            <a href="/contact">Contact</a>
           </nav>
         </div>
        
@@ -106,7 +106,8 @@ export default function Home() {
 
 
       {/* SERVICES */}
-      <section className="services">
+      <section className="services"
+      id="services">
 
         <h2 className="services-head">
           Our Services
@@ -234,6 +235,16 @@ export default function Home() {
           </button>
         </form>
       </section>
+
+      <footer>
+        <p>&copy; 2026 Akrafted | Built for Impact</p>
+        <div className="footer-link">
+          <a href="/about">About</a>
+          <a href="/contact">Contact Us</a>
+          <a href="/privacy-policy">Privacy Policy</a>
+        </div>
+
+      </footer>
 
     </main>
     
