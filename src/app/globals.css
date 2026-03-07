@@ -37,8 +37,8 @@ main {
   padding-left: 24px;
   padding-right: 24px;
   width: 100%;
-  margin-left: auto;
-  margin-right: auto;
+  margin: 0 auto;
+  max-width: 900px;
 }
 
 .hero {
